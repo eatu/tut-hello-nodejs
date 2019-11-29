@@ -29,6 +29,14 @@ function start(response, postData) {
     response.end();
 }
 
+function hello(response, postData) {
+  console.log("'HELLO' being processed");
+
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write("Hello World");
+  response.end();
+}
+
 function list(response, postData) {
   console.log("'LIST' being processed");
   var result = "nil";
@@ -51,3 +59,4 @@ function upload(response, postData) {
 exports.start = start;
 exports.list = list;
 exports.upload = upload;
+exports.hello = hello;
